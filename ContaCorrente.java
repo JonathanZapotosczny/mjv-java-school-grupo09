@@ -2,8 +2,9 @@ public class ContaCorrente {
 
 	public int numeroConta;
 	public int numeroAgencia;
-    public String nome;
-    public boolean contaAtiva;
+    	public String nome;
+    	public boolean contaAtiva;
+	LocalDate dataNascimento;
 	
 	public void sacar (double valor) {
 
@@ -59,6 +60,27 @@ public class ContaCorrente {
 		    System.out.printf("Conta inativa ou nao encontrada.");
 	
 	    }
+
+	public void consultarExtrato(LocalDate dataInicial, LocalDate dataFinal) {
+		
+		int dia = 0;
+
+        	System.out.println("===================================");
+        	System.out.printf("Cliente: %s \n", nome);
+        	System.out.printf("Agencia: %d \n", numeroAgencia);
+        	System.out.printf("Conta: %d \n", numeroConta);
+
+        	while(!dataInicial.isEqual(dataFinal)) {
+
+            		System.out.printf("Data: %s Saldo: %.2f", dataInicial, saldo);
+
+            		dia++;
+            		dataInicial.plusDays(dia);
+        	}
+
+        	System.out.println("===================================");
+
+	}
 
     }
 }
