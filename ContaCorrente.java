@@ -1,9 +1,10 @@
 public class ContaCorrente {
-
+  
 	public int numeroConta;
 	public int numeroAgencia;
-    	public String nome;
-    	public boolean contaAtiva;
+  public double saldoConta;
+  public String nome;
+  public boolean contaAtiva;
 	LocalDate dataNascimento;
 	
 	public void sacar (double valor) {
@@ -81,6 +82,9 @@ public class ContaCorrente {
         	System.out.println("===================================");
 
 	}
-
-    }
+          
+   public double consultarSaldoAtual() {
+      System.out.println("Saldo atual: " + saldoConta);
+      return saldoConta;
+   }
 }
